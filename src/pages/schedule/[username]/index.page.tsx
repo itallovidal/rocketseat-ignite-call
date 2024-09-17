@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import { UserHeader, Container } from '@/pages/schedule/[username]/style'
 import { Avatar, Heading, Text } from '@ignite-ui/react'
 import { GetStaticPaths, GetStaticProps } from 'next'

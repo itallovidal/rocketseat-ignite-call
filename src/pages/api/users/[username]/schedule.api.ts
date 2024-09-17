@@ -2,8 +2,8 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import { prisma } from '@/lib/prisma'
 import { z } from 'zod'
 import dayjs from 'dayjs'
-import {google} from "googleapis";
-import {getGoogleOAuthToken} from "@/lib/google";
+import { google } from 'googleapis'
+import { getGoogleOAuthToken } from '@/lib/google'
 
 const createSchedulingBodySchema = z.object({
   name: z.string(),
