@@ -7,6 +7,7 @@ import z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useRouter } from 'next/router'
 import { api } from '@/lib/axios'
+import Head from 'next/head'
 
 const registerFormSchema = z.object({
   username: z
@@ -42,6 +43,8 @@ function Register() {
       if (response.status !== 200) {
         alert(response.data)
       }
+
+      await router.push('/register/connect-calendar')
     } catch (e) {
       console.log(e)
     }
@@ -56,50 +59,58 @@ function Register() {
   }, [setValue, router.query.username])
 
   return (
-    <Container>
-      <Header>
-        <Heading as={'strong'}>Bem Vindo ao Ignite Call</Heading>
+    <>
+      <Head>
+        <title> Ignite Call | Registro </title>
+      </Head>
 
-        <Text>
-          Conecte o seu calendário para verificar automaticamente as horas
-          ocupadas e os novos eventos à medida em que são agendados.
-        </Text>
+      <Container>
+        <Header>
+          <Heading as={'strong'}>Bem Vindo ao Ignite Call</Heading>
 
-        <MultiStep size={4} currentStep={1} />
-      </Header>
+          <Text>
+            Conecte o seu calendário para verificar automaticamente as horas
+            ocupadas e os novos eventos à medida em que são agendados.
+          </Text>
 
-      <Form as={'form'} onSubmit={handleSubmit(handleRegisterUser)}>
-        <label>
-          <Text size={'sm'}>Nome de usuário</Text>
-          <TextInput
-            size="sm"
-            prefix="ignite.com/"
-            placeholder="seu-usuário"
-            crossOrigin=""
-            {...register('username')}
-          />
+          <MultiStep size={4} currentStep={1} />
+        </Header>
 
-          {errors.username && <FormError>{errors.username.message}</FormError>}
-        </label>
+        <Form as={'form'} onSubmit={handleSubmit(handleRegisterUser)}>
+          <label>
+            <Text size={'sm'}>Nome de usuário</Text>
+            <TextInput
+              size="sm"
+              prefix="ignite.com/"
+              placeholder="seu-usuário"
+              crossOrigin=""
+              {...register('username')}
+            />
 
-        <label>
-          <Text size={'sm'}>Nome completo</Text>
-          <TextInput
-            {...register('name')}
-            size="sm"
-            placeholder="seu nome"
-            crossOrigin=""
-          />
+            {errors.username && (
+              <FormError>{errors.username.message}</FormError>
+            )}
+          </label>
 
-          {errors.name && <FormError>{errors.name.message}</FormError>}
-        </label>
+          <label>
+            <Text size={'sm'}>Nome completo</Text>
+            <TextInput
+              {...register('name')}
+              size="sm"
+              placeholder="seu nome"
+              crossOrigin=""
+            />
 
-        <Button disabled={isSubmitting} size="sm" type="submit">
-          Próximo
-          <ArrowRight />
-        </Button>
-      </Form>
-    </Container>
+            {errors.name && <FormError>{errors.name.message}</FormError>}
+          </label>
+
+          <Button disabled={isSubmitting} size="sm" type="submit">
+            Próximo
+            <ArrowRight />
+          </Button>
+        </Form>
+      </Container>
+    </>
   )
 }
 

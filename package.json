@@ -2,6 +2,9 @@
   "name": "ignite-call",
   "version": "0.1.0",
   "private": true,
+  "[prisma]": {
+    "editor.formatOnSave": true
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,16 +12,30 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.3.4",
+    "@ignite-ui/react": "^2.2.4",
+    "@tanstack/react-query": "^5.55.4",
+    "axios": "^1.6.7",
+    "dayjs": "^1.11.13",
+    "googleapis": "^144.0.0",
+    "next": "14.1.2",
+    "next-auth": "^4.24.7",
+    "nookies": "^2.5.2",
+    "phosphor-react": "^1.4.1",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.1.2"
+    "react-hook-form": "^7.51.0",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@prisma/client": "^5.10.2",
+    "@rocketseat/eslint-config": "^2.2.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "14.1.2"
+    "eslint": "^8.57.0",
+    "eslint-config-next": "14.1.2",
+    "prisma": "^5.10.2",
+    "typescript": "^5"
   }
 }
