@@ -28,14 +28,14 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@prisma/client": "^5.10.2",
+    "@prisma/client": "^5.20.0-dev.15",
     "@rocketseat/eslint-config": "^2.2.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8.57.0",
     "eslint-config-next": "14.1.2",
-    "prisma": "^5.10.2",
+    "prisma": "^5.20.0-dev.15",
     "typescript": "^5"
   }
 }
