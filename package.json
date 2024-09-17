@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "@prisma/client": "^5.20.0-dev.15",
+    "@prisma/nextjs-monorepo-workaround-plugin": "^5.19.1",
     "@rocketseat/eslint-config": "^2.2.2",
     "@types/node": "^20",
     "@types/react": "^18",
